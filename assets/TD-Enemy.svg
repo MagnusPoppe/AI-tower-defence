@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>TD-Enemy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="10.0710678" cy="9.07106781" rx="3.5" ry="6.5"></ellipse>
+        <ellipse id="path-2" cx="29.0710678" cy="9.07106781" rx="3.5" ry="6.5"></ellipse>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A4" transform="translate(-277.000000, -723.000000)">
+            <g id="Enemy" transform="translate(278.000000, 724.000000)">
+                <circle id="Oval-2" stroke="#E5AAAA" fill="#A06868" cx="19.5" cy="19.5" r="19.5"></circle>
+                <g id="Oval-3" transform="translate(10.071068, 9.071068) rotate(45.000000) translate(-10.071068, -9.071068) ">
+                    <use fill="#9BBCFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <ellipse stroke="#F6F6F6" stroke-width="2" cx="10.0710678" cy="9.07106781" rx="2.5" ry="5.5"></ellipse>
+                </g>
+                <g id="Oval-3-Copy" transform="translate(29.071068, 9.071068) rotate(-45.000000) translate(-29.071068, -9.071068) ">
+                    <use fill="#9BBCFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <ellipse stroke="#F6F6F6" stroke-width="2" cx="29.0710678" cy="9.07106781" rx="2.5" ry="5.5"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

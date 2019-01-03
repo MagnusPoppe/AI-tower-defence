@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/TD-Road.svg" type="Texture" id=1]
+
+[node name="Road" type="Node2D"]
+
+z_index = -1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Graphics" type="Sprite" parent="." index="0"]
+
+position = Vector2( 45.3672, 120.662 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Path" type="Line2D" parent="." index="1"]
+
+z_index = -1
+points = PoolVector2Array( 67, 220, 67, 100, 92, 100, 92, 36, -15, 36 )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -255
+sharp_limit = 2.0
+round_precision = 5
+_sections_unfolded = [ "Border", "Capping", "Fill", "Z Index" ]
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="69px" viewBox="0 0 250 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>TD-Beach</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A4" transform="translate(-173.000000, -773.000000)" stroke="#979797">
+            <g id="Beach" transform="translate(174.000000, 774.000000)">
+                <path d="M248,73 C248,4.51669102 192.483309,0 124,0 C55.516691,0 0,4.51669102 0,73 C0,73 248,73 248,73 Z" id="Oval" fill="#F8FDC5"></path>
+                <path d="M231.013699,73 C231.013699,13.8979662 144,25 124,25 C115.078079,25 90,14 63,34 C43.7009563,48.2955879 16.9863014,40.2631487 16.9863014,73 C16.9863014,73 231.013699,73 231.013699,73 Z" id="Oval-Copy" fill="#A5CFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
