@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="103px" height="94px" viewBox="0 0 103 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Point of interest</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M103,19 C103,5 87.001538,0 75,0 C66.9989747,0 59.332308,6.33333333 52,19 C40.4686108,6.33333333 30.8019441,0 23,0 C11.2970838,0 1.25073563e-15,1 0,19 C0,31 16.6666667,56 50,94 C85.3333333,53.3333333 103,28.3333333 103,19 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BoardSketch" transform="translate(-423.000000, -50.000000)">
+            <g id="Point-of-interest" transform="translate(423.000000, 50.000000)">
+                <g id="poinit-of-interest">
+                    <use fill="#FF8585" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#FFACAC" stroke-width="7" d="M49.9891576,88.6668264 C82.7524517,50.7251291 99.5,26.8243072 99.5,19 C99.5,9.36847047 88.7415135,3.5 75,3.5 C68.5247487,3.5 61.8015386,9.05395616 55.0290983,20.7534433 L52.6323998,24.8937741 L49.4118618,21.3561707 C38.4863467,9.35502712 29.5497263,3.5 23,3.5 C15.7760992,3.5 11.8365907,4.04617808 8.87451878,5.77348059 C5.36761377,7.81849703 3.5,11.7658765 3.5,19 C3.5,29.4605734 19.0786992,53.1145235 49.9891576,88.6668264 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

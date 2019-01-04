@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/TD-Beach.svg" type="Texture" id=2]
 [ext_resource path="res://src/tower.gd" type="Script" id=3]
 [ext_resource path="res://assets/TD-Tower.svg" type="Texture" id=4]
-[ext_resource path="res://Road.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/TD-Point-of-interest.svg" type="Texture" id=5]
 [ext_resource path="res://src/WaveController.gd" type="Script" id=6]
 
 [node name="Root" type="Node2D" index="0"]
@@ -12,17 +12,167 @@
 scale = Vector2( 4.57812, 4.5625 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Background" type="Sprite" parent="." index="0"]
+[node name="BackgroundGraphics" type="Node2D" parent="." index="0"]
 
-position = Vector2( 66.5218, 107.882 )
-scale = Vector2( 0.5, 0.5 )
+editor/display_folded = true
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Background" type="Sprite" parent="BackgroundGraphics" index="0"]
+
+position = Vector2( 304.545, 490.27 )
+scale = Vector2( 2.28906, 2.28125 )
 z_index = -1
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Camera2D" type="Camera2D" parent="." index="1"]
+[node name="Beach" type="Sprite" parent="BackgroundGraphics" index="1"]
+
+position = Vector2( 269.747, 859.703 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Towers" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+scale = Vector2( 0.25, 0.25 )
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="BasicTower" type="Node2D" parent="Towers" index="0"]
+
+editor/display_folded = true
+position = Vector2( 168.859, 301.546 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+shooting_range = 150.0
+reload_time = 1.0
+damage = 1
+
+[node name="Graphics" type="Sprite" parent="Towers/BasicTower" index="0"]
+
+rotation = 1.5708
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BasicTower2" type="Node2D" parent="Towers" index="1"]
+
+editor/display_folded = true
+position = Vector2( 430.994, 720.081 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+shooting_range = 150.0
+reload_time = 1.0
+damage = 1
+
+[node name="Graphics" type="Sprite" parent="Towers/BasicTower2" index="0"]
+
+position = Vector2( 0, -0.420532 )
+rotation = 1.5708
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BasicTower3" type="Node2D" parent="Towers" index="2"]
+
+editor/display_folded = true
+position = Vector2( 425.573, 529.283 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+shooting_range = 150.0
+reload_time = 1.0
+damage = 1
+
+[node name="Graphics" type="Sprite" parent="Towers/BasicTower3" index="0"]
+
+rotation = 1.5708
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BasicTower4" type="Node2D" parent="Towers" index="3"]
+
+editor/display_folded = true
+position = Vector2( 155.907, 583.599 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+shooting_range = 150.0
+reload_time = 1.0
+damage = 1
+
+[node name="Graphics" type="Sprite" parent="Towers/BasicTower4" index="0"]
+
+rotation = 1.5708
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Health" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PointOfInterest" type="StaticBody2D" parent="Health" index="0"]
+
+position = Vector2( 93.5585, 84.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Health/PointOfInterest" index="0"]
+
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Health/PointOfInterest" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.239915, -24.1332, 16.1764, -41.2784, 30.3114, -43.4337, 40.7048, -39.4707, 46.5944, -34.3953, 47.4952, -25.7045, 44.2386, -16.8051, 22.8282, 13.0217, -1.03501, 41.4163, -34.6403, 0.951943, -47.2648, -22.7288, -47.8468, -31.7811, -44.6595, -39.7766, -34.4047, -43.8092, -24.3578, -43.1834, -15.073, -38.0385 )
+
+[node name="PointOfInterest2" type="StaticBody2D" parent="Health" index="1"]
+
+position = Vector2( 414.141, 60.0486 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Health/PointOfInterest2" index="0"]
+
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Health/PointOfInterest2" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.239915, -24.1332, 16.1764, -41.2784, 30.3114, -43.4337, 40.7048, -39.4707, 46.5944, -34.3953, 47.4952, -25.7045, 44.2386, -16.8051, 22.8282, 13.0217, -1.03501, 41.4163, -34.6403, 0.951943, -47.2648, -22.7288, -47.8468, -31.7811, -44.6595, -39.7766, -34.4047, -43.8092, -24.3578, -43.1834, -15.073, -38.0385 )
+
+[node name="WaveController" type="Node" parent="." index="3"]
+
+script = ExtResource( 6 )
+enemies_per_wave = [ 50 ]
+seconds_between_enemies = 0.3
+
+[node name="Enemies" type="Node2D" parent="." index="4"]
+
+scale = Vector2( 0.25, 0.25 )
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Projectiles" type="Node2D" parent="." index="5"]
+
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
 
 position = Vector2( 64.9921, 110.951 )
+scale = Vector2( 1, 1 )
 z_index = 1
 anchor_mode = 1
 rotating = false
@@ -47,89 +197,5 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "Smoothing", "Transform", "Visibility", "Z Index" ]
-
-[node name="Beach" type="Sprite" parent="." index="2"]
-
-position = Vector2( 68.0024, 215.685 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="BasicTower" type="Node2D" parent="." index="3"]
-
-position = Vector2( 36.8839, 66.0923 )
-scale = Vector2( 0.25, 0.25 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-shooting_range = 50.0
-reload_time = 1.0
-damage = 1
-
-[node name="Graphics" type="Sprite" parent="BasicTower" index="0"]
-
-rotation = 1.5708
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="BasicTower2" type="Node2D" parent="." index="4"]
-
-position = Vector2( 98.8067, 161.765 )
-scale = Vector2( 0.25, 0.25 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-shooting_range = 50.0
-reload_time = 1.0
-damage = 1
-
-[node name="Graphics" type="Sprite" parent="BasicTower2" index="0"]
-
-position = Vector2( 0, -0.420532 )
-rotation = 1.5708
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="BasicTower3" type="Node2D" parent="." index="5"]
-
-position = Vector2( 110.437, 100.682 )
-scale = Vector2( 0.25, 0.25 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-shooting_range = 50.0
-reload_time = 1.0
-damage = 1
-
-[node name="Graphics" type="Sprite" parent="BasicTower3" index="0"]
-
-rotation = 1.5708
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="BasicTower4" type="Node2D" parent="." index="6"]
-
-position = Vector2( 34.0549, 127.912 )
-scale = Vector2( 0.25, 0.25 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-shooting_range = 50.0
-reload_time = 1.0
-damage = 1
-
-[node name="Graphics" type="Sprite" parent="BasicTower4" index="0"]
-
-rotation = 1.5708
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Road" parent="." index="7" instance=ExtResource( 5 )]
-
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="WaveController" type="Node" parent="." index="8"]
-
-script = ExtResource( 6 )
-enemies_per_wave = [ 50 ]
-seconds_between_enemies = 0.3
-
-[node name="Enemies" type="Node2D" parent="." index="9"]
 
 

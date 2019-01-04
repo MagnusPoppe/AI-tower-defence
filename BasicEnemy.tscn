@@ -12,14 +12,14 @@ radius = 10.0
 
 editor/display_folded = true
 position = Vector2( 30.2307, 132.597 )
-scale = Vector2( 0.25, 0.25 )
 z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-speed = 400.0
+_sections_unfolded = [ "Transform" ]
+speed = 100.0
 max_hp = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]

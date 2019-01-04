@@ -1,10 +1,8 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-var step = 0.0
-var speed = 6
+var speed = 100
 var to = null
-var velocity = null
+var velocity = Vector2(0, 0)
 var time_alive = 0
 var ready = false
 var damage = 0

@@ -5,24 +5,24 @@ export (float) var speed
 export (int) var max_hp
 
 # Travel path variables: 
-var road_scene = preload("res://Road.tscn")
+onready var target_container = get_node("/root/Root/Health")
+onready var start = get_node("/root/Root/BackgroundGraphics/Beach")
 var pid = 0
+var target = null
 var path = []
 
 # Stats:
+var intelligence_level = 0
 var remaining_hp
 var velocity = Vector2(0, 0)
 
 
 func _ready():
 	# Getting road skeleton:
-	var road = road_scene.instance()
-	road.position = Vector2(0,0)
-	path = road.get_child(1).points
-
-	# Setting my self to start.
-	position = path[pid]
-
+	path.push_back(start.position)
+	self.position = path[pid]
+	select_target()
+	
 	# Setup for my stats:
 	remaining_hp = max_hp
 	
@@ -42,18 +42,22 @@ func _physics_process(delta):
 	# Finally moving:
 	move_and_slide(self.velocity)
 
+func select_target():
+	var targets = target_container.get_children()
+	target = targets[randi() % len(targets)]
+	if intelligence_level == 0:
+		path.push_back(target.position)
+
 
 func destination_reached():
-	return  ( 	# Exactly at destination: 
-		int(position.x) == int(path[pid].x) && 
-		int(position.y) == int(path[pid].y)
-	) || ( 		# Passed destination
+	# :Returns: True if destination is reached or passed
+	return  (
 		(
-			(velocity.x < 0 && position.x <= path[pid].x) ||
-			(velocity.x > 0 && position.x >= path[pid].x)
+			(velocity.x <= 0 && position.x <= path[pid].x) ||
+			(velocity.x >= 0 && position.x >= path[pid].x)
 		) && (
-			(velocity.y < 0 && position.y <= path[pid].y) ||
-			(velocity.y > 0 && position.y >= path[pid].y)
+			(velocity.y <= 0 && position.y <= path[pid].y) ||
+			(velocity.y >= 0 && position.y >= path[pid].y)
 		)
 	)
 

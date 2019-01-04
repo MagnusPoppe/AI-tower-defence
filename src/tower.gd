@@ -2,7 +2,7 @@ extends Node2D
 
 # Preloaded variables: 
 onready var enemy_troops = get_node("/root/Root/Enemies")
-onready var root = get_node("/root/Root")
+onready var projectiles_container = get_node("/root/Root/Projectiles")
 var default_projectile = preload("res://BasicProjectile.tscn")
 
 # User set parameters:
@@ -31,7 +31,7 @@ func _process(delta):
 		if reload_timer <= 0:
 			var projectile = default_projectile.instance()
 			projectile.setup(self.position, closest_enemy.position, self.damage)
-			root.add_child(projectile)
+			projectiles_container.add_child(projectile)
 			reload_timer = reload_time
 			
 

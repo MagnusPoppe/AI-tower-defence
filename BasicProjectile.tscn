@@ -8,17 +8,14 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="BasicProjectile" type="KinematicBody2D" index="0"]
+[node name="BasicProjectile" type="KinematicBody2D"]
 
-position = Vector2( -0.0100074, 0.0200148 )
-scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-damage = 2
 
 [node name="Graphics" type="Sprite" parent="." index="0"]
 
