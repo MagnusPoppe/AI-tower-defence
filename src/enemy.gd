@@ -1,62 +1,67 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-var road_scene = preload("res://Road.tscn")
-var path = []
-var attackers = []
-var total_distance = 0
+# User preference variables: 
 export (float) var speed
-export (int) var max_hitpoints
-var remaining_hit_points
-var movement_speed = 0
-var time = 0
-var interpolating = false
-var start_target = null
-var current_target = null
-var current_distance = null
-var point_in_path = 0
-var step = 0.0
+export (int) var max_hp
+
+# Travel path variables: 
+var road_scene = preload("res://Road.tscn")
+var pid = 0
+var path = []
+
+# Stats:
+var remaining_hp
+var velocity = Vector2(0, 0)
+
 
 func _ready():
 	# Getting road skeleton:
 	var road = road_scene.instance()
 	road.position = Vector2(0,0)
-	road.get_child(1)
 	path = road.get_child(1).points
 
 	# Setting my self to start.
-	remaining_hit_points = max_hitpoints
-	position = path[point_in_path]
-	# Pre calculating total distance
-	for i in range(1, len(path)):
-		total_distance += path[i-1].distance_to(path[i])
-	# Setting self to start.
-	get_next_point()
+	position = path[pid]
 
-func _process(delta):
-	if remaining_hit_points <= 0:
-		print("I died!")
-		self.queue_free()
-	step += movement_speed
-	if step <= 1.0:
-		position = start_target.linear_interpolate(current_target, step)
-	else: 
-		step = 0.0
-		get_next_point()
-
-func get_next_point():
-	start_target = path[point_in_path]
-	point_in_path += 1
-
-	if point_in_path >= len(path):
-		point_in_path = 0
-		position = path[0]
-		get_next_point()
+	# Setup for my stats:
+	remaining_hp = max_hp
 	
-	current_target = path[point_in_path]
-	movement_speed = speed * (1 - (start_target.distance_to(current_target) / total_distance))
-	rotation = start_target.angle_to_point(current_target)
+
+func _physics_process(delta):
+	# Checking if my destination is reached: 
+	if self.destination_reached():
+		pid += 1
+		if pid < len(path):
+			self.rotation = self.position.angle_to_point(path[pid])
+			self.velocity = Vector2(-speed, 0).rotated(self.rotation)
+		else:
+			var wave_controller = get_node("/root/Root/WaveController")
+			wave_controller.deduct_point(remaining_hp)
+			self.queue_free()
+	
+	# Finally moving:
+	move_and_slide(self.velocity)
+
+
+func destination_reached():
+	return  ( 	# Exactly at destination: 
+		int(position.x) == int(path[pid].x) && 
+		int(position.y) == int(path[pid].y)
+	) || ( 		# Passed destination
+		(
+			(velocity.x < 0 && position.x <= path[pid].x) ||
+			(velocity.x > 0 && position.x >= path[pid].x)
+		) && (
+			(velocity.y < 0 && position.y <= path[pid].y) ||
+			(velocity.y > 0 && position.y >= path[pid].y)
+		)
+	)
+
 
 func hit(damage):
-	remaining_hit_points -= damage
-	print("I was hit! Remaining HP: ", remaining_hit_points)
+	# UGH!
+	remaining_hp -= damage
+
+	# Should i be alive?
+	if self.remaining_hp <= 0:
+		self.queue_free()

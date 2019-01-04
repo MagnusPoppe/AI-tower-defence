@@ -10,6 +10,7 @@ export (float) var seconds_between_enemies
 var enemies_spawned = 0
 var time_since_last_spawn = 0
 var wave = 0
+var remaining_points = 100
 
 func _process(delta):
 	if enemies_spawned < enemies_per_wave[wave]:
@@ -20,3 +21,7 @@ func _process(delta):
 			enemies_container.add_child(new_enemy)
 			enemies_spawned += 1
 			time_since_last_spawn = 0
+
+func deduct_point(points):
+	remaining_points -= points
+	

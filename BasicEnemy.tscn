@@ -19,8 +19,8 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-speed = 0.01
-max_hitpoints = 4
+speed = 400.0
+max_hp = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

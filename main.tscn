@@ -57,12 +57,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="BasicTower" type="Node2D" parent="." index="3"]
 
-position = Vector2( 66.9547, 87.5398 )
+position = Vector2( 36.8839, 66.0923 )
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 shooting_range = 50.0
-reload_time = 0.25
+reload_time = 1.0
 damage = 1
 
 [node name="Graphics" type="Sprite" parent="BasicTower" index="0"]
@@ -78,7 +78,7 @@ scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 shooting_range = 50.0
-reload_time = 0.25
+reload_time = 1.0
 damage = 1
 
 [node name="Graphics" type="Sprite" parent="BasicTower2" index="0"]
@@ -95,7 +95,7 @@ scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 shooting_range = 50.0
-reload_time = 0.25
+reload_time = 1.0
 damage = 1
 
 [node name="Graphics" type="Sprite" parent="BasicTower3" index="0"]
@@ -111,7 +111,7 @@ scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 shooting_range = 50.0
-reload_time = 0.25
+reload_time = 1.0
 damage = 1
 
 [node name="Graphics" type="Sprite" parent="BasicTower4" index="0"]
@@ -128,7 +128,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 script = ExtResource( 6 )
 enemies_per_wave = [ 50 ]
-seconds_between_enemies = 1.0
+seconds_between_enemies = 0.3
 
 [node name="Enemies" type="Node2D" parent="." index="9"]
 
